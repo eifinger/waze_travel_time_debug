@@ -104,6 +104,7 @@ _LOGGER = logging.getLogger(__name__)
 
 async def async_setup_entry(hass: HomeAssistant, config_entry: ConfigEntry) -> bool:
     """Load the saved entities."""
+    _LOGGER.warning("Loaded custom component Waze Travel Time. This overrides the builtin integration.")
     if SEMAPHORE not in hass.data.setdefault(DOMAIN, {}):
         hass.data.setdefault(DOMAIN, {})[SEMAPHORE] = asyncio.Semaphore(1)
 
