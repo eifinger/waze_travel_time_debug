@@ -63,7 +63,7 @@ def create_async_httpx_client(
         verify=ssl_context,
         headers={USER_AGENT: SERVER_SOFTWARE},
         limits=DEFAULT_LIMITS,
-        transport=httpx.HTTPTransport(local_address="0.0.0.0"),
+        transport=httpx.AsyncHTTPTransport(local_address="0.0.0.0"),
         **kwargs,
     )
 
