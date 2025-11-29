@@ -13,7 +13,7 @@ DATA_HTTPX_ASYNC_CLIENT: HassKey[httpx.AsyncClient] = HassKey("httpx_async_clien
 
 def create_transport() -> httpx.AsyncHTTPTransport:
     """Create a httpx transport which enforces the use of IPv4."""
-    return httpx.AsyncHTTPTransport(local_address="0.0.0.0")
+    return httpx.AsyncHTTPTransport()
 
 
 async def create_httpx_client(hass: HomeAssistant) -> httpx.AsyncClient:
